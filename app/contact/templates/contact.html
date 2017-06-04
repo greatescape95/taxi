@@ -9,39 +9,49 @@
 
     <!-- heading -->
     <div class="row p_m">
-      <div class="content-name">
+      <div class="content-name-top">
         <h1 class="m_0">Contact us freely</h1>
       </div>
     </div>
 
 
     <!-- data form -->
-    <div class="row mb_xl m_m">
+    <div id="contact-form" class="row mb_xl m_m">
       <div class="col-sm-12 pb_s">
-        <div class="hidden-sm col-md-1 col-lg-2 p_s">
+        <div class="col-sm-hidden col-md-2 col-lg-3">
         </div>
-        <div class="col-sm-12 col-md-10 col-lg-8 bg-white">
-          <form name="form" class="p_xl">
-            <div class="form-group">
-              <label class="label-contact" for="formGroupExampleInput">Name:</label>
+        <div class="col-sm-12 col-md-8 col-lg-6 bg-white">
+          <form name="form" class="p_xl" novalidate>
+            <div class="form-group z-ind">
+              <label class="label-contact" for="formGroupExampleInput">Name*:</label>
               <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter your name" ng-model="user.name" name="uName" required="">
               <br />
               <div ng-show="form.$submitted || form.uName.$touched">
                 <div ng-show="form.uName.$error.required">Tell us your name.</div>
+                <span ng-show="isRequiredName" class="red">Name is required!</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="label-contact" for="formGroupExampleInput2">Phone*:</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Please enter your phone" ng-model="user.phone" name="uPhone" required="">
+              <br />
+              <div ng-show="form.$submitted || form.uPhone.$touched">
+                <span ng-show="form.uPhone.$error.required">Tell us your phone.</span>
+                <span ng-show="isRequiredPhone" class="red">Phone is required!</span>
+                <span ng-show="form.uPhone.$error.number">This is not a valid phone.</span>
               </div>
             </div>
             <div class="form-group">
               <label class="label-contact" for="formGroupExampleInput2">E-mail:</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Please enter your e-mail" ng-model="user.email" name="uEmail" required="">
+              <input type="email" class="form-control" id="formGroupExampleInput3" placeholder="Please enter your e-mail" ng-model="user.email" name="uEmail">
               <br />
               <div ng-show="form.$submitted || form.uEmail.$touched">
-                <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
                 <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
               </div>
             </div>
             <div class="form-group">
               <label class="label-contact" for="formGroupExampleInput2">Message:</label>
-              <textarea class="form-control" rows="8" id="formGroupExampleInput3" placeholder="Please enter your message"  ng-model="user.message" name="uMessage" required="">
+              <textarea class="form-control" rows="5" id="formGroupExampleInput4" placeholder="Please enter your message"  ng-model="user.message" name="uMessage">
               </textarea>
               <br />
               <div ng-show="form.$submitted || form.uName.$touched">
@@ -51,71 +61,82 @@
             <input type="text" name="foo" style="display: none;" ng-model="user.hidden">
             <button type="submit" class="btn btn-primary btn-contact" ng-click="submit(user)">Get in touch</button>
             <button type="submit" class="btn btn-primary btn-contact" ng-click="reset(form)">Reset form</button>
-
           </form>
+        </div>
+        <div class="col-sm-hidden col-md-2 col-lg-3">
+        </div>
+      </div>
+    </div>
+
+    <div id="feedback-form" class="row mb_xl m_m">
+      <div class="col-sm-12 pb_s">
+        <div class="hidden-sm col-md-1 col-lg-2 p_s">
+        </div>
+        <div class="col-sm-12 col-md-10 col-lg-8 bg-white feedback-form">
+          <h1 class="feedback">Thanks for your message. Someone from our staff will contact you soon.</h1>
         </div>
         <div class="hidden-sm col-md-1 col-lg-2 p_s">
         </div>
       </div>
     </div>
-
     <!--footer -->
-    <div class="footer-container">
-      <div class="row pb_m p_m">
-        <div class="col-sm-12">
-          <div class="hidden-sm col-md-1 col-lg-2">
-          </div>
-          <div class="col-sm-12 col-md-5 col-lg-4 pt_l">
-            <h1 class="m_0">Wine Tasting Brac</h1>
-            <h3 class="m_xs">OPG Franulić</h3>
-            <h3 class="m_xs">Zrtava fašizma 11 | 21423 Nerežišća</h3>
-            <h3 class="m_xs">Island of Brač | Croatia</h3>
-          </div>
-          <div class="col-sm-12 col-md-5 col-lg-4 pt_l">
-            <h1 class="m_0">Get in touch</h1>
-            <div class="mb_s mt_s">
-              <i class="fa fa-envelope fa-2x mr_s" aria-hidden="true"></i>
-              <h2 class="m_0">winetastingbrac@gmail.com</h2>
-            </div>
-            <div class="mb_s">
-              <i class="fa fa-phone-square fa-2x cll mr_s" aria-hidden="true"></i>
-              <h2 class="m_0">+385 98 195 1550</h2>
-            </div>
-          </div>
-          <div class="hidden-sm col-md-1 col-lg-2">
-          </div>
-        </div>
-      </div>
-
-      <div class="row p_m">
-        <div class="col-sm-12">
-          <div class="hidden-sm col-md-1 col-lg-2">
-          </div>
-          <div class="col-sm-12 col-md-10 col-lg-8">
-            <div id="map"></div>
-          </div>
-          <div class="hidden-sm col-md-1 col-lg-2">
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="hidden-sm col-md-1 col-lg-2">
-          </div>
-          <div class="col-sm-12 col-md-10 col-lg-8 tac">
-            <div class="m_m inb">
-              <i class="fa fa-facebook-official fa-2x mr_l" aria-hidden="true"></i>
-              <i class="fa fa-instagram fa-2x mr_l" aria-hidden="true"></i>
-              <i class="fa fa-google-plus fa-2x mr_l" aria-hidden="true"></i>
-              <i class="fa fa-tripadvisor fa-2x mr_l" aria-hidden="true"></i>
+        <div class="footer-container">
+          <div class="row p_m">
+            <div class="col-sm-12">
+              <div class="hidden-sm col-md-1 col-lg-2">
+              </div>
+              <div class="col-sm-12 col-md-5 col-lg-4 pt_l">
+                <h1 class="m_0">Taxi Brac</h1>
+                <h3 class="m_xs">Taxi service all around Brac</h3>
+                <h3 class="m_xs">Zrtava fašizma 11 | 21400 Supetar</h3>
+                <h3 class="m_xs">Island of Brač | Croatia</h3>
+              </div>
+              <div class="col-sm-12 col-md-5 col-lg-4 pt_l">
+                <h1 class="m_0">Get in touch</h1>
+                <div class="mb_s mt_s">
+                  <i class="fa fa-envelope fa-2x mr_s" aria-hidden="true"></i>
+                  <h2 class="m_0">taxibrac@gmail.com</h2>
+                </div>
+                <div class="mb_s">
+                  <i class="fa fa-phone-square fa-2x cll mr_s" aria-hidden="true"></i>
+                  <h2 class="m_0">+385 (0)91 365 0024</h2>
+                </div>
+              </div>
+              <div class="hidden-sm col-md-1 col-lg-2">
+              </div>
             </div>
           </div>
-          <div class="hidden-sm col-md-1 col-lg-2">
-          </div>
-        </div>
-      </div>
 
-    </div>
+          <div class="row p_m">
+            <div class="col-sm-12">
+              <div class="hidden-sm col-md-1 col-lg-2">
+              </div>
+              <div class="col-sm-12 col-md-10 col-lg-8">
+                <div id="map"></div>
+              </div>
+              <div class="hidden-sm col-md-1 col-lg-2">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="hidden-sm col-md-1 col-lg-2">
+              </div>
+              <div class="col-sm-12 col-md-10 col-lg-8 tac">
+                <div class="m_m inb">
+                  <i class="fa fa-facebook-official fa-2x mr_m ml_m" aria-hidden="true"></i>
+                  <i class="fa fa-instagram fa-2x mr_m ml_m" aria-hidden="true"></i>
+                  <i class="fa fa-google-plus fa-2x mr_m ml_ml" aria-hidden="true"></i>
+                  <i class="fa fa-tripadvisor fa-2x mr_m ml_m" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="hidden-sm col-md-1 col-lg-2">
+              </div>
+            </div>
+          </div>
+
+        </div>
 
   </div>
+</div>

@@ -4,7 +4,7 @@ var knex = require('knex')({
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'wine_db'
+    database: 'taxi_db'
   }
 });
 var bookshelf = require('bookshelf')(knex);

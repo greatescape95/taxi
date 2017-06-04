@@ -4,36 +4,49 @@
   border-radius: 0;
   background-color:rgba(0,0,0,0) !important;
   border: 1px solid grey;
+  z-index: 10;
 }
 
 .form-control:focus {
-  border-color: #990000;
+  border-color: #ADD8E6;
   box-shadow: inset 0 1px 1px rgba(128 , 128, 128, 0.075), 0 0 8px rgba(128, 128, 128, 0.6);
 }
 
+.red {
+  color: #C13232;
+}
 .btn-contact {
   border-radius: 0;
-  background-image: linear-gradient(to bottom, #990000 0%, #770000 100%);
+  background-image: linear-gradient(to bottom, #72BCD4 0%, #ADD8E6 100%);
   border: 1px solid grey;
 }
 
+.feedback-form {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
 
+#feedback-form {
+  display:none;
+}
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
   background-position :0;
-  background-image: linear-gradient(to bottom, #d3d3d3 0%, #770000 100%);
+  background-image: linear-gradient(to bottom, #d3d3d3 0%, #ADD8E6 100%);
 }
 
 
 
 .label-contact {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 /* contact background+*/
 
 .bg-white{
   background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid white;
 }
 
 /* header contact */
@@ -47,7 +60,7 @@
 
 .menu-small-dropdown {
   display:none;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -55,33 +68,20 @@
   list-style-type: none;
   padding: 0;
   z-index:6;
+  height:100px;
 }
 
-.menu-small-dropdown::after {
-  width: 100%;
-  height:50px;
-  position: fixed;
-  top:320px;
-  left:0;
-  right:0;
-  background-image: url("../images/kosina5.png");
-  background-repeat: repeat;
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-position: 0 0;
-  content: "";
-}
+
 
 .menu-small-dropdown li {
 width: 100%;
 height: 80px;
-background-color: #990000;
+background-color: #ADD8E6;
 margin:0;
 padding:0;
 line-height: 80px;
 text-align: center;
+border-bottom: 1px solid grey;
 }
 
 .menu-small-dropdown li a {
@@ -115,25 +115,17 @@ text-decoration: none;
 }
 
 body {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   overflow-x: hidden;
+
 }
 
 html {
   min-height: 100%; /* enforce height */
   scroll-behavior: smooth;
+
 }
 
-.main-menu::before{
-  position: fixed;
-  left: 0;
-  right: 0;
-  top:0;
-  height: 100px;
-  width: 100%;
-  width: 100vw;
-  background-color: #990000;
-}
 
 .main-menu{
   margin:0;
@@ -142,46 +134,27 @@ html {
   left: 0;
   right: 0;
   top:0;
+  height: 100px;
   width: 100%;
   width: 100vw;
-  z-index:5;
+  background-color: #72BCD4;
+  z-index:1;
+  border-bottom: 2px solid grey;
 }
 
-.main-menu::after{
-  width: 100%;
-  width: 100vw;
-  height:50px;
-  position: fixed;
-  top:100px;
-  left:0;
-  right:0;
-  background-image: url("../images/kosina5.png");
-  background-repeat: repeat;
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-position: 0 0;
-  content: "";
+.z-ind {
+    z-index:3;
 }
+
+
 
 @media(max-width:768px){
-  .main-menu::before{
-    height:70px;
-  }
-
   .main-menu{
     height:95px;
-  }
-
-  .main-menu::after{
-    top:70px;
-    height:25px;
   }
 }
 
 ul.menu-big {
-  position:fixed;
   top:0;
   right:0;
   left:0;
@@ -190,15 +163,25 @@ ul.menu-big {
   margin: auto;
   width: 50%;
   height: 100%;
-  z-index:5;
 }
 
-@media(max-width:1200px){
+@media(max-width:1800px){
+  ul.menu-big {
+    width: 65%;
+  }
+}
+
+@media(max-width:1400px){
   ul.menu-big {
     width: 80%;
   }
 }
 
+@media(max-width:900px){
+  ul.menu-big {
+    width: 100%;
+  }
+}
 
 
 ul.menu-big li {
@@ -207,20 +190,23 @@ ul.menu-big li {
   float: left;
   width:25%;
   padding-top: 40px;
-
+  text-align: center;
 }
 
-/*li:not(:first-child) {
-border-left: 1px dotted white;
-}*/
 
 ul.menu-big li a {
   font-size: 40px;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 2px;
   text-decoration: none;
   color:grey;
   outline: 0;
+}
+
+@media(max-width:1200px){
+  ul.menu-big li a {
+    font-size: 32px;
+  }
 }
 
 
@@ -254,12 +240,12 @@ ul.menu-big li a:hover, ul.menu-big li a:active, ul.menu-big li a:focus {
 
 .header {
   width:100%;
-  height:80vh;
+  height:20vh;
 }
 
 @media(max-width:768px){
   .header {
-    height:70vh;
+    height:10vh;
   }
 }
 
@@ -284,314 +270,79 @@ ul.menu-big li a:hover, ul.menu-big li a:active, ul.menu-big li a:focus {
   width: 100%;
   height: 120vh;
   z-index: -10;
-  background: url("../images/header.jpg") no-repeat top center;
+  background: url("../images/background.jpg") no-repeat top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-.fill-container {
-  margin-top: 50px;
-  padding: 0;
-  width: 100%;
-  height: 510px;
-  position: absolute;
-  left:0;
-  right:0;
-  background: url("../images/ispuna.jpg") repeat-x;
-  background-attachment: fixed;
-  background-size: 450px 2400px;
-  -webkit-background-size: 450px 2400px;
-  -moz-background-size: 450px 2400px;
-  -o-background-size: 450px 2400px;
-  z-index: 0;
-  -webkit-transition-property: background-image; /* Safari */
-  -webkit-transition-duration: 2s; /* Safari */
-  transition-property: background-image;
-  transition-duration: 2s;
-}
-
-
-.bottle-container-up::before {
-  height:51px;
-  padding-top: 0;
-  background-image: url("../images/kosina.png");
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  position:absolute;
-  width:100%;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1;
-  filter: drop-shadow(rgba(29, 38, 37, .5) 0 0 10px 0 20px);
-  content: "";
-}
-
-.bottle-container-up {
-  height: 560px;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  top:0;
-  left:0;
-  right:0;
-}
-
-.bottle-container-up::after {
-  width: 100%;
-  z-index: 1;
-  height:510px;
-  position: absolute;
-  top:50px;
-  left:0;
-  right:0;
-  background-image: url("../images/boca7.png");
-  background-repeat: repeat;
-  background-size: 400px 250px;
-  -webkit-background-size: 400px 250px;
-  -moz-background-size: 400px 250px;
-  -o-background-size: 400px 250px;
-  background-position: 400px 250px;
-  background-position-x: 400px;
-  background-position-y: 250px;
-  -webkit-transition-property: background-size; /* Safari */
-  -webkit-transition-duration: 2s; /* Safari */
-  transition-property: background-size;
-  transition-duration: 2s;
-  content: "";
-}
-
-.bottle-container-down {
-  padding: 0;
-  margin: auto;
-  height: 560px;
-  width: 100%;
-  z-index: 2;
-  position: relative;
-  top:0;
-  left:0;
-  right:0
-}
-
-.bottle-container-down::before {
-  content: "";
-  height:50px;
-  width: 100%;
-  z-index: 2;
-  position: absolute;
-  top:0;
-  left:0;
-  right:0;
-  background-image: url("../images/kosina4.png");
-  background-repeat: repeat;
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  -webkit-transition-property: background-size; /* Safari */
-  -webkit-transition-duration: 2s; /* Safari */
-  transition-property: background-size;
-  transition-duration: 2s;
-}
-
-.bottle-container-down::after {
-  content: "";
-  height: 510px;
-  width: 100%;
-  z-index: 2;
-  position: absolute;
-  top:50px;
-  left:0;
-  right:0;
-  background-image: url("../images/boca8.png");
-  background-repeat: repeat;
-  background-size: 400px 250px;
-  -webkit-background-size: 400px 250px;
-  -moz-background-size: 400px 250px;
-  -o-background-size: 400px 250px;
-  background-position: -250px 0;
-  background-position-x: -250px;
-  background-position-y: 0;
-  -webkit-transition-property: background-size; /* Safari */
-  -webkit-transition-duration: 2s; /* Safari */
-  transition-property: background-size;
-  transition-duration: 2s;
-}
-
-
-@media(max-width:1600px){
-  .fill-container{
-    height: 410px;
-    background-size:330px 2250px;
-    -webkit-background-size: 330px 2250px;
-    -moz-background-size: 330px 2250px;
-    -o-background-size: 330px 2250px;
-  }
-  .bottle-container-up, .bottle-container-down {
-    height: 460px;
-
-  }
-  .bottle-container-up::after, .bottle-container-down::after {
-    height: 410px;
-    background-size: 350px 200px;
-    -webkit-background-size: 350px 200px;
-    -moz-background-size: 350px 200px;
-    -o-background-size: 350px 200px;
-  }
-}
-
-@media(max-width:1200px){
-  .fill-container{
-    height: 325px;
-    background-size:300px 1800px;
-    -webkit-background-size: 300px 1800px;
-    -moz-background-size: 300px 1800px;
-    -o-background-size: 300px 1800px;
-  }
-  .bottle-container-up, .bottle-container-down {
-    height: 375px;
-
-  }
-  .bottle-container-up::after, .bottle-container-down::after {
-    height: 325px;
-    background-size: 280px 160px;
-    -webkit-background-size: 280px 160px;
-    -moz-background-size: 280px 160px;
-    -o-background-size: 280px 160px;
-    background-position: -200px 0;
-    background-position-x: -200px;
-    background-position-y: 0;
-  }
-}
-
-@media(max-width:1000px){
-  .fill-container{
-    height: 285px;
-    /*  background-size:260px 1500px;
-    -webkit-background-size: 260px 1500px;
-    -moz-background-size: 260px 1500px;
-    -o-background-size: 260px 1500px;*/
-    background-color: #990000;
-    background-size: 0 0;
-  }
-  .bottle-container-up, .bottle-container-down {
-    height: 335px;
-  }
-  .bottle-container-up::after, .bottle-container-down::after {
-    height: 285px;
-    background-size: 240px 140px;
-    -webkit-background-size: 240px 140px;
-    -moz-background-size: 240px 140px;
-    -o-background-size: 240px 140px;
-    background-position: -160px 0;
-    background-position-x: -160px;
-    background-position-y: 0;
-
-  }
-}
-
-@media(max-width:768px){
-  .fill-container{
-    height: 225px;
-    /*  background-size:210px 1200px;
-    -webkit-background-size: 210px 1200px;
-    -moz-background-size: 210px 1200px;
-    -o-background-size: 210px 1200px;*/
-    margin-top: 25px;
-  }
-  .bottle-container-up, .bottle-container-down {
-    height: 250px;
-  }
-  .bottle-container-up::before, .bottle-container-down::before {
-    height: 26px;
-  }
-  .bottle-container-up::after, .bottle-container-down::after {
-    height: 225px;
-    top:25px;
-    background-size: 195px 110px;
-    -webkit-background-size: 195px 110px;
-    -moz-background-size: 195px 110px;
-    -o-background-size: 195px 110px;
-    background-position: -130px 0;
-    background-position-x: -130px;
-    background-position-y: 0;
-  }
-  .imgborder-u {
-    height:15px;
-  }
-  .imgborder-d {
-    height:15px;
-  }
-}
-
-@media(max-width:480px){
-  .fill-container{
-    height: 175px;
-    /*  background-size:160px 900px;
-    -webkit-background-size: 160px 900px;
-    -moz-background-size: 160px 900px;
-    -o-background-size: 160px 900px;*/
-  }
-  .bottle-container-up, .bottle-container-down {
-    height: 200px;
-
-  }
-  .bottle-container-up::after, .bottle-container-down::after {
-    height: 175px;
-    background-size: 150px 86px;
-    -webkit-background-size: 150px 86px;
-    -moz-background-size: 150px 86px;
-    -o-background-size: 150px 86px;
-    background-position: -160px 0;
-    background-position-x: -160px;
-    background-position-y: 0;
-  }
-}
-
-.imgborder-u {
-  height:30px;
-  background-image: url("../images/kosina2.png");
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  width:100%;
-  margin: 0;
-}
-.imgborder-d {
-  height:30px;
-  background-image: url("../images/kosina3.png");
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  width:100%;
-}
 
 .wrapper {
   position:fixed;
   width:100%;
   height:100%;
 }
-.content-name{
+.content-name, .content-name-top{
   width:100%;
   z-index: 2;
-  line-height:400px;
+  line-height:280px;
   text-align: center;
 }
 
-.content-name h1{
+@media(max-width:1200px){
+  .content-name-top{
+    line-height:200px;
+    margin-top: 40px;
+  }
+}
+
+.bg-blue {
+  background-color: #5B96A9;
+  border: 1px solid white;
+}
+
+
+
+
+.content-name-bg-blue  h1, .content-name-bg-blue  h2, .content-name-bg-blue  h3, .content-name-bg-blue  h4, .content-name-bg-blue  h5{
+  color: grey !important;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.content-name h1, .content-name-top h1{
   vertical-align: middle;
   display: inline-block;
   width: 100%;
   color: white;
   font-size: 54px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media(max-width:992px){
+  .content-name h1, .content-name-top h1{
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    color: white;
+    font-size: 38px;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+}
+
+.content-name h1, .content-name  h2, .content-name  h4, .content-name  h5{
+
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.feedback-form h1{
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  color: black;
+  font-size: 34px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .content{
@@ -602,25 +353,23 @@ ul.menu-big li a:hover, ul.menu-big li a:active, ul.menu-big li a:focus {
 
 .content-home-container {
   color: white;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  border: 1px solid #d3d3d3;
+  font-family: 'Roboto Condensed', sans-serif;
   background-color: #fff;
-  border: 1px solid #d3d3d3;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .content-home-header-container {
-  background-color: #FFC3E1;
+  background-color: #5B96A9;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
   font-size: 14px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   padding: 1px 1px 1px 10px;
 }
 .content-home-body {
   background-color: #fff;
   font-size: 15px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #000;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -635,10 +384,8 @@ ul.menu-big li a:hover, ul.menu-big li a:active, ul.menu-big li a:focus {
   height: auto;
 }
 
-
-
 .content-icon {
-  margin-right: 20px;
+  margin-right: 15px;
   width:20px;
   height:auto;
 }
@@ -648,20 +395,16 @@ ul.menu-big li a:hover, ul.menu-big li a:active, ul.menu-big li a:focus {
   height: 400px;
 }
 .footer-container {
-  background-image: url("../images/ispuna.png");
-  background-repeat: repeat-x;
-  background-size: 400px 1200px;
-  background-position: 0 0;
-  color: #fff;
-  padding-top: 310px;
+  margin-top: 200px;
+  background-color: #5B96A9;
   right:0;
   left:0;
-  z-index:4
+  bottom
+  z-index:4;
+  color: white;
+  border-top: 1px solid grey;
+
 }
-
-
-
-
 
 i {
   display:inline-block;
@@ -673,10 +416,6 @@ i {
   height: auto;
 
 }
-
-
-
-
 
 #map {
   width:100%;
