@@ -35,6 +35,8 @@ router.post('/messages', function( req, res, next ){
 
       var template = "<p>Name:</p><br>"+
       message.attributes.contact_name +
+      "<br><p>Phone:</p><br>" +
+      message.attributes.phone +
       "<br><p>E-mail:</p><br>" +
       message.attributes.email +
       "<br><p>Message:</p><br>" +
