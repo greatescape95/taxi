@@ -303,11 +303,25 @@ ul.menu-big li a:hover, ul.menu-big li a:active, ul.menu-big li a:focus {
   border: 1px solid white;
 }
 
+h2 a {
+  text-decoration: none;
+  color: white;
+}
 
+h2 a:hover, h2 a:focus, h2 a:visited, h2 a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.icon-wapp {
+width: 28px;
+padding: 1px;
+height:auto;
+}
 
 
 .content-name-bg-blue  h1, .content-name-bg-blue  h2, .content-name-bg-blue  h3, .content-name-bg-blue  h4, .content-name-bg-blue  h5{
-  color: grey !important;
+  color: white !important;
   font-family: 'Roboto Condensed', sans-serif;
 }
 .content-name h1, .content-name-top h1{
