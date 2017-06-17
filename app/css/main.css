@@ -36,7 +36,11 @@
   background-image: linear-gradient(to bottom, #d3d3d3 0%, #ADD8E6 100%);
 }
 
-
+.footer-container a, .footer-container a:hover, .footer-container a:focus, .footer-container a:visited,
+.footer-container a:active {
+  text-decoration: none;
+  color: white;
+}
 
 .label-contact {
   font-size: 24px;
