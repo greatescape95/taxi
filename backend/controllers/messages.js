@@ -44,7 +44,7 @@ router.post('/messages', function( req, res, next ){
 
       var mailOptions = {
         from: "winetastingbrac@gmail.com",
-        to: "bractaxi@gmail.com",
+        to: "toni.franulic@gmail.com",
         subject: "Contact" + message.attributes.message_id,
         generateTextFromHTML: true,
         //  text: message.attributes.contact_name,
